@@ -32,10 +32,10 @@ from sdk.interface.speaker import Speaker
 from sdk.interface.speech_recognizer import SpeechRecognizer
 from sdk.interface.speech_synthesizer import SpeechSynthesizer
 from sdk.interface.system import System
-
+from app.pixel_ring.pixels import Pixels
 logging.basicConfig(level=sdk_config.LOGGER_LEVEL)
 logger = logging.getLogger(__name__)
-
+pixels = Pixels()
 
 class DuerOSStateListner(object):
     '''
@@ -50,6 +50,7 @@ class DuerOSStateListner(object):
         监听状态回调
         :return:
         '''
+        pixels.listen()
         logging.info('[DuerOS状态]正在倾听..........')
 
     def on_thinking(self):
@@ -57,6 +58,7 @@ class DuerOSStateListner(object):
         语义理解状态回调
         :return:
         '''
+        pixels.think()
         logging.info('[DuerOS状态]正在思考.........')
 
     def on_speaking(self):
@@ -64,6 +66,7 @@ class DuerOSStateListner(object):
         播放状态回调
         :return:
         '''
+        pixels.speak()
         logging.info('[DuerOS状态]正在播放........')
 
     def on_finished(self):
@@ -71,6 +74,7 @@ class DuerOSStateListner(object):
         处理结束状态回调
         :return:
         '''
+        pixels.off()
         logging.info('[DuerOS状态]结束')
 
 

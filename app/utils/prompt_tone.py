@@ -10,6 +10,7 @@ class PromptTone(object):
 
     def __init__(self):
         self.player = Player()
+        # os.path.
         resource = os.path.realpath(os.path.join(os.path.dirname(__file__), '../resources/du.mp3'))
         self.resource_uri = 'file://{}'.format(resource)
 

@@ -230,3 +230,6 @@ DuerOS核心处理模块进入语音识别状态（唤醒后触发）
         提示音播放
         :return:
         '''
+## 声音处理算法
+ 声音处理算法包括,语音活动检测( VAD ) , 波达方向( DOA ) , 波束成形( Beamforming ) , 噪声抑制( NS ) , 声学回声消除( AEC ) 和关键词检测 ( KWS ) .声音处理算法流程如下： 
+ ![图片](./readme_resources/mic_array.png)
